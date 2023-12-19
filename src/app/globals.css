@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The page */
+body {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1 1fr);
+  place-items: center;
+  height: 100vh;
+}
+
+.btnn {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 1em 2em;
+  cursor: pointer;
+  border-radius: 9999rem;
+  width: 10rem;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.btnn:hover {
+  border: 1px solid #d6d6d6;
+  transition: all 0.5s ease-in;
+}
+
+.btnn-span {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+.btnn::before,
+.btnn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d6d6d6;
+  border: 1px solid #d6d6d6;
+  border-radius: 9999rem;
+  transform: scaleX(0);
+  transition: all 300ms ease-in;
+}
+
+.btnn::before {
+  left: -30%;
+}
+
+.btnn::after {
+  right: -30%;
+}
+
+.btnn::after {
+  transform: scale(1);
+}
